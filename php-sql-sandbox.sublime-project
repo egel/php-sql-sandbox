@@ -1,0 +1,14 @@
+{
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"path": "/home/maciek/public_html/php-sql-sandbox",
+            //"file_exclude_patterns": ["*.php"]
+		}
+	],
+    "settings":
+    {
+      "tab_size": 4
+    }
+}
