@@ -7,8 +7,8 @@
             //"file_exclude_patterns": ["*.php"]
 		}
 	],
-    "settings":
-    {
-      "tab_size": 4
-    }
+  "settings":
+  {
+    "tab_size": 2
+  }
 }
