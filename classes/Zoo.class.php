@@ -24,26 +24,36 @@ class Zoo
 
     echo '<h2>Let\'s begin our tour</h2>';
 
-    $croco = new Croco();
-    $croco->sayHi();
+    $this->render_all_animals();
+  }
 
-    $giraffe = new Giraffe();
-    $giraffe->sayHi();
+  function fetch_all_animals()
+  {
+    $connection = connect_db();
+    $sql = 'SELECT animals.type,
+                    animals.name AS animal_name,
+                    continents.name AS continent_name,
+                    animals.age,
+                    animals.like_todo,
+                    animals.image_name
+            FROM animals, continents
+            WHERE animals.continent_id = continents.id';
+    $result = $connection->query($sql);
+    return $result;
+  }
 
-    $elephant = new Elephant();
-    $elephant->sayHi();
+  function render_all_animals()
+  {
+    $result = $this->fetch_all_animals();
 
-    $lion = new Lion();
-    $lion->sayHi();
-
-    $zebra = new Zebra();
-    $zebra->sayHi();
-
-    $monkey = new Monkey();
-    $monkey->sayHi();
-
-    $hippo = new Hippo();
-    $hippo->sayHi();
+    for($i=1; $i<=$result->num_rows; $i++)
+    {
+      $row = $result->fetch_object(); // zwraca wartość zapytania jako obiekty
+      $animal_type = ucwords($row->type); // set the type of animal with first uppercase letter
+      $animal = new $animal_type($row); // create animal object by calling auto-class loader
+      $animal->sayHi();
+      //echo $row->name . " is " .$row->type . "<br/>";
+    }
   }
 }
 
