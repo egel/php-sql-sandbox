@@ -3,7 +3,7 @@
 /**
 *   Croco class
 */
-class Croco extends Animal
+class Crocodile extends Animal
 {
 
   protected $type='Crocodile';
@@ -11,7 +11,7 @@ class Croco extends Animal
   protected $age='12';
   protected $like='swimming';
 
-  protected $image_name='croco.jpg';
+  protected $image_name='crocodile.jpg';
 
 }
 
