@@ -1,4 +1,4 @@
-# PHP Sandbox
+# PHP + SQL Sandbox
 This is very simple sandbox for PHP + SQL developers who needs quick environment for test classes with MySQL database support.
 
 
@@ -7,6 +7,7 @@ This is very simple sandbox for PHP + SQL developers who needs quick environment
   * Simple full OOP Project
   * Auto-class loader
   * Ad-hoc connection with exsisting local database
+  * Built-in example of usage
 
 
 ## Requirements
