@@ -11,19 +11,15 @@ class Zoo
 
   function welcome()
   {
-
     echo '<h1>'.$this->welcome.'</h1>';
     echo '<h3>'.$this->welcome_2.'</h3>';
     echo '<img src="images/zoo-welcome.jpg" title="'.$this->welcome.'" />';
-    //echo '<p>----------------------------------------------------</p>';
   }
 
   function startTour()
   {
     $this->welcome();
-
     echo '<h2>Let\'s begin our tour</h2>';
-
     $this->render_all_animals();
   }
 
@@ -52,7 +48,6 @@ class Zoo
       $animal_type = ucwords($row->type); // set the type of animal with first uppercase letter
       $animal = new $animal_type($row); // create animal object by calling auto-class loader
       $animal->sayHi();
-      //echo $row->name . " is " .$row->type . "<br/>";
     }
   }
 }
