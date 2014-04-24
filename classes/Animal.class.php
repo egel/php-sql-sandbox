@@ -29,13 +29,13 @@ abstract class Animal
   /*
    * Functions
    */
-	public function sayHi()
+	public function get_sayHi()
 	{
-		echo '<div style="padding-top:30px; clear:both;">';
-		echo '<img src="'.MEDIA_BASEDIR.$this->_image_name.'" title="'.$this->_type.' '.$this->_name.'" style="float:left;" />';
-		echo '<p>Hello, my name is '.$this->_name. '. I am '.$this->_type.' and live in '. $this->_continent .'.</p>';
-		echo '<p>I\'m '.$this->_age.' years old and I like '.$this->_like.'.</p>';
-		echo '</div>';
+		return '<div style="padding-top:30px; clear:both;">
+		<img src="'.MEDIA_BASEDIR.$this->_image_name.'" title="'.$this->_type.' '.$this->_name.'" style="float:left;" />
+		<p>Hello, my name is '.$this->_name. '. I am '.$this->_type.' and live in '. $this->_continent .'.</p>
+		<p>I\'m '.$this->_age.' years old and I like '.$this->_like.'.</p>
+		</div>';
 	}
 }
 
