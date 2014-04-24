@@ -3,8 +3,8 @@
 class Menu
 {
 
-	protected $pages = array("zoo" -> "Moje małe Zoo",
-                           "glowna" -> "Strona Główna");
+	protected $pages = array("zoo" => "Moje małe Zoo",
+                           "glowna" => "Strona Główna");
 
 	/*
 	 * Constructors and destructors (default = not declared)
@@ -20,8 +20,8 @@ class Menu
   public function get_menus()
   {
     $result = '<ul id="nav">';
-    foreach ($this->pages as $value) {
-      $result .= '<li><a href="index.php?page='.$value.'">'.$value.'</a></li>';
+    foreach ($this->pages as $key => $value) {
+      $result .= '<li><a href="index.php?page='.$key.'">'.$value.'</a></li>';
     }
     $result .= '</ul>';
 
